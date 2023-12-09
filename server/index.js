@@ -14,6 +14,9 @@ const io =new Server(server,{
         credentials:true
     }
 })
+app.get('/',(req,res)=>{
+    res.send("hello");
+})
 io.on("connection",(socket)=>{
     console.log(`user connected id ${socket.id}`)
     socket.on("room",(data)=>{

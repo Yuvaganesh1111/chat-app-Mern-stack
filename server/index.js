@@ -20,6 +20,7 @@ app.get('/',(req,res)=>{
 io.on("connection",(socket)=>{
     console.log(`user connected id ${socket.id}`)
     socket.on("room",(data)=>{
+        console.log(data);
         socket.join(data);
      })
     socket.on("send_message",(data)=>{

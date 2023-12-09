@@ -10,7 +10,8 @@ const server=http.createServer(app);
 const io =new Server(server,{
     cors:{
         origin:["https://chat-app-yuva-frontend.vercel.app"],
-        method:['get','post']
+        method:['POST','GET'],
+        credentials:true
     }
 })
 io.on("connection",(socket)=>{
